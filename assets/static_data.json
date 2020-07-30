@@ -1,0 +1,81 @@
+{
+  "Days": [
+    {
+      "id": "1",
+      "title": "Jour 1 : Pack intégration",
+      "body": "L'ornithorynque (Ornithorhynchus anatinus) est un animal semi-aquatique endémique de l'est de l'Australie, y compris la Tasmanie. C'est l'une des cinq espèces de l'ordre des monotrèmes, seul ordre de mammifères qui pond des œufs au lieu de donner naissance à des petits complètement formés (les quatre autres espèces sont des échidnés). C'est la seule espèce actuelle de la famille des Ornithorhynchidae et du genre Ornithorhynchus bien qu'un grand nombre de fragments d'espèces fossiles de cette famille et de ce genre aient été découverts.",
+      "date": "01/09/2020",
+    },
+    {
+      "id": "2",
+      "title": "Jour 2 : Journée en forêt",
+      "body": "Journée des Tampis",
+      "date": "02/09/2020",
+    },
+    {
+      "id": "3",
+      "title": "Jour 3 : Remise du bidet",
+      "body": "Deuxième journée des Tampis",
+      "date": "03/09/2020",
+    },
+    {
+      "id": "4",
+      "title": "Jour 4 : Seks",
+      "body": "Faites le seks pas la guère",
+      "date": "04/09/2020",
+    },
+  ],
+
+  "Contacts": [
+    {
+      "id":"1",
+      "nom":"Romane Dauge",
+      "poste":"Présidente",
+      "tel":"+337 88 63 50 27",
+      "photo":1
+    },
+    {
+      "id":"2",
+      "nom":"Loïck Kerjean",
+      "poste":"Vice-Président",
+      "tel":"+336 59 04 62 86",
+      "photo":2
+    },
+    {
+      "id":"3",
+      "nom":"Céleste Moudileno",
+      "poste":"Resp Sécu",
+      "tel":"+336 72 79 26 34",
+      "photo":3
+    },
+    {
+      "id":"4",
+      "nom":"Camille Haziza",
+      "poste":"Resp Anim",
+      "tel":"+336 65 78 40 15",
+      "photo":4
+    },
+    {
+      "id":"5",
+      "nom":"Lucas David",
+      "poste":"Resp WEI",
+      "tel":"+337 60 99 10 80",
+      "photo":5
+    },
+    {
+      "id":"6",
+      "nom":"Camil Smaïni",
+      "poste":"Resp CCC",
+      "tel":"+336 79 46 92 35",
+      "photo":6
+    },
+    {
+      "id":"7",
+      "nom":"Valentine Delrieu",
+      "poste":"Resp TUC",
+      "tel":"+336 21 12 75 77",
+      "photo":7
+    },
+  ],
+
+}
