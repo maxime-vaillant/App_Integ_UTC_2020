@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import AppNavigator from './navigation/AppNavigator';
 
@@ -43,11 +43,16 @@ async function loadResourcesAsync() {
       require("./assets/images/Justin.png"),
       require("./assets/images/Cadena.png"),
       require("./assets/images/Couronne.png"),
-      require("./assets/images/Pyramide.jpg"),
-      require("./assets/images/Piedestal.png"),
-      require("./assets/images/CorpsTotem.png"),
-      require("./assets/images/TeteTotem.png"),
-      require("./assets/images/TestPromo.jpg")
+      require("./assets/images/Ornikar.png"),
+      require("./assets/images/Pack5h.png"),
+      require("./assets/images/Pack10h.png"),
+      require("./assets/images/Pack20h.png"),
+      require("./assets/images/AntreDeMondes.png"),
+      require("./assets/images/YouaHead.png"),
+      require("./assets/images/VBHead.png"),
+      require("./assets/images/TampiHead.png"),
+      require("./assets/images/KBHead.png"),
+      require("./assets/images/Maya.png")
     ]),
 
   ]);

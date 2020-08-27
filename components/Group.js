@@ -1,30 +1,51 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Text } from 'react-native';
+import { StyleSheet, View, ScrollView, Text, Dimensions } from 'react-native';
 
 import Colors from '../assets/Colors';
+
+const width = Dimensions.get('window').width;
 
 const Group = ({group, date, lieu}) => {
   return(
     <View style={styles.main_container}>
-        <Text>Groupe {group} </Text>
-        <Text>{date} </Text>
-        <Text>{lieu}</Text>
+        <Text style={styles.text_title}>Groupe {group} </Text>
+        <Text style={styles.text_date}>{date} </Text>
+        <Text style={styles.text_lieu}>{lieu}</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   main_container: {
-    height: 40,
-    flexDirection: 'row',
-    marginLeft: 20,
+    width: width/2 - 25,
+    height: width/2 - 25,
     marginBottom: 10,
-    marginRight: 20,
-    borderRadius: 5,
     paddingLeft: 5,
-    backgroundColor: 'white',
-    alignItems: 'center'
+    paddingTop: 25,
+    paddingBottom: 25,
+    paddingRight: 5,
+    backgroundColor: Colors.blockColor,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
+
+  text_title: {
+    color: "white",
+    fontWeight: 'bold',
+    fontSize: 25,
+  },
+
+  text_date: {
+    color: "white",
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+
+  text_lieu: {
+    color: "white",
+    fontWeight: 'bold',
+    fontSize: 20,
+  }
 
 })
 

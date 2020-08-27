@@ -17,25 +17,24 @@ const DayItemNow = ({dayName, dayDetails}) => {
 
 const styles = StyleSheet.create({
   main_container: {
-    height: 40,
+    height: 50,
     flexDirection: 'row',
     marginLeft: 20,
     marginRight: 20,
-    borderColor: '#000000',
-    borderRadius: 5,
     paddingLeft: 5,
-    backgroundColor: 'white'
+    backgroundColor: Colors.blockColor,
+    alignItems: 'center',
+    borderRadius: 3,
   },
 
   body_container:{
     maxHeight: 170,
     flexDirection: 'column',
-    marginTop: -5,
+    paddingTop: 10,
     marginLeft: 20,
     marginRight: 20,
-    borderColor: '#000000',
+    backgroundColor: Colors.collapseColor,
     borderRadius: 3,
-    backgroundColor: 'white'
   },
 
   content_container: {
@@ -46,17 +45,17 @@ const styles = StyleSheet.create({
   title_text: {
     fontFamily: Colors.fontFamily,
     fontWeight: 'bold',
-    color: Colors.fontColor,
-    fontSize: 25,
+    color: "white",
+    fontSize: 20,
     flex: 1,
     paddingRight: 5,
     marginLeft: 5,
-    marginTop: 5
   },
 
   body_text:{
     fontSize: 15,
     flex: 1,
+    color: "white",
     textAlign: 'justify',
     paddingRight: 10,
     paddingLeft: 10,

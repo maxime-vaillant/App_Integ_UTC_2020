@@ -16,9 +16,6 @@ const tabNavigator = createBottomTabNavigator(
       screen: HomeScreen,
       navigationOptions: {
         tabBarLabel: 'Accueil',
-        tabBarOptions: {
-          activeTintColor: Colors.iconColor,
-        },
         tabBarIcon: ({ focused }) =>
           <TabBarIcon
             focused={focused}
@@ -31,9 +28,6 @@ const tabNavigator = createBottomTabNavigator(
       screen: PlanningScreen,
       navigationOptions: {
         tabBarLabel: 'Journées',
-        tabBarOptions: {
-          activeTintColor: Colors.iconColor,
-        },
         tabBarIcon: ({ focused }) =>
           <TabBarIcon
             focused={focused}
@@ -46,9 +40,6 @@ const tabNavigator = createBottomTabNavigator(
       screen: ScoreScreen,
       navigationOptions: {
         tabBarLabel: 'Score',
-        tabBarOptions: {
-          activeTintColor: Colors.iconColor,
-        },
         tabBarIcon: ({ focused }) =>
           <TabBarIcon
             focused={focused}
@@ -60,9 +51,6 @@ const tabNavigator = createBottomTabNavigator(
       screen: ContactScreen,
       navigationOptions: {
         tabBarLabel: 'Contacts',
-        tabBarOptions: {
-          activeTintColor: Colors.iconColor,
-        },
         tabBarIcon: ({ focused }) =>
           <TabBarIcon
             focused={focused}
@@ -75,9 +63,6 @@ const tabNavigator = createBottomTabNavigator(
       screen: SponsorScreen,
       navigationOptions: {
         tabBarLabel: 'Bons Plans',
-        tabBarOptions: {
-          activeTintColor: Colors.iconColor,
-        },
         tabBarIcon: ({ focused }) =>
           <TabBarIcon
             focused={focused}
@@ -85,6 +70,17 @@ const tabNavigator = createBottomTabNavigator(
           />
       }
     },
+  },
+  {
+    tabBarOptions: {
+        activeTintColor: 'white', // active icon color
+        inactiveTintColor: '#E2B09B',  // inactive icon color
+        style: {
+            backgroundColor: "#B73904", // TabBar background
+            borderTopWidth:1,
+            borderTopColor:'#D3D3D3'
+        }
+    }
   }
 );
 

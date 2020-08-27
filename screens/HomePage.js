@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView, SafeAreaView, View, Text, RefreshControl, FlatList } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView, View, Text, RefreshControl, StatusBar, FlatList } from 'react-native';
 import Constants from 'expo-constants';
 
 import ScreenTitle from '../components/ScreenTitle';
@@ -18,7 +18,7 @@ function HomeScreen() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
   const [date, setDate] = useState(new Date().getDate());
-  const [info, setInfo] = useState({title: '', details: '', idate: ''});
+  const [info, setInfo] = useState({title: 'LE SITE', details: 'EST', idate: 'DOWN'});
   const [group, setGroup] = useState(null);
 
   async function fetchData() {
@@ -42,35 +42,51 @@ function HomeScreen() {
 
   return(
     <SafeAreaView style={styles.main_container}>
-      <ScreenTitle title="Accueil"/>
+      <StatusBar translucent='true' barStyle='light-content' hidden='false'/>
       <ScrollView refreshControl={
         <RefreshControl
           refreshing={fetched}
           onRefresh={() => fetchData() }
         />
       }>
-        <View style={styles.normal_view}><Text style={styles.text}>Informations ></Text></View>
         <InformationBoard infoName={info.title} infoDetails={info.details} infoDate={info.idate}/>
-        {year == 2020 && month == 4 && date >= 20 && date <=23
+        {year == 2020 && month == 8 && date >= 12 && date <= 19
           ?
           <View style={styles.normal_view}>
-            <Text style={styles.text}>Planning du jour > </Text>
-            <DayItemNow dayName={dataDays[date-20].title} dayDetails={dataDays[date-20].body}/>
-            <DayItem dayName={dataDays[date-19].title} dayDetails={dataDays[date-19].body} dayDate={dataDays[date-19].date} />
+            <Text style={styles.text}>Planning du jour</Text>
+            <DayItemNow dayName={dataDays[date-21].title} dayDetails={dataDays[date-21].body}/>
+            <DayItem dayName={dataDays[date-20].title} dayDetails={dataDays[date-20].body} dayDate={dataDays[date-20].date} />
           </View>
           :
           <View></View>
         }
         {group != null
           ?
-          <SafeAreaView>
-            <Text style={styles.text}>Groupes > </Text>
-            <FlatList
-            data={group}
-            renderItem={({ item }) => <Group group={item.numero} date={item.heure} lieu={item.lieu}/>}
-            keyExtractor={item => item.numero}
-            />
+          <SafeAreaView style={styles.normal_view}>
+            <Text style={styles.text}>Groupes</Text>
+            <View style={styles.group_view}>
+            <View style={styles.normal_view_left}>{group.map(item => item.numero % 2 == 1 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
+            <View style={styles.normal_view_right}>{group.map(item => item.numero % 2 == 0 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
+            </View>
           </SafeAreaView>
+          :
+          <View></View>
+        }
+        {group == null && year == 2020 && ((month == 8 && date < 12) || (month != 8) || (month == 8 && date > 19))
+          ?
+          <View style={styles.normal_view}>
+            <Text style={styles.text}>Informations sur l'application</Text>
+            <View style={styles.body_container}>
+              <Text style={styles.body_text}>- Toutes les informations nécessaires aux journées seront présentes sur cette page.</Text>
+              <Text style={styles.body_text}>- Le lieu et la date de rendez-vous pour les groupes seront sur cette page.</Text>
+              <Text style={styles.body_text}>- Tu peux retrouver le planning de l'intégration en présentielle dans la section "Journées". Clique sur la journée dont tu veux connaitre les détails.</Text>
+              <Text style={styles.body_text}>- Viens consulter les scores pour savoir si ton clan est en tête dans la section "Score" !</Text>
+              <Text style={styles.body_text}>- En cas d'URGENCE, tu peux contacter un membre du BDI dans la section "Contacts" en cliquant sur le téléphone vert.</Text>
+              <Text style={styles.body_text}>- Retrouve les bons plans proposés par nos partenaires dans la section "Bons Plans".</Text>
+              <Text style={styles.body_text}>L'ensemble du BDI te souhaite une bonne intégration !</Text>
+            </View>
+
+          </View>
           :
           <View></View>
         }
@@ -82,21 +98,62 @@ function HomeScreen() {
 
 const styles  = StyleSheet.create({
   main_container: {
-    marginTop: Constants.statusBarHeight,
     flex: 1,
-    backgroundColor: Colors.background
+    backgroundColor: Colors.mainColor
+  },
+
+  normal_view_left: {
+    flex: 1,
+    paddingRight: 5,
+    alignItems: "center",
+    marginLeft: 20,
+  },
+
+  normal_view_right: {
+    flex: 1,
+    paddingLeft: 5,
+    alignItems: "center",
+    marginRight: 20,
   },
 
   normal_view: {
+    backgroundColor: "white",
+    flex: 1,
+    paddingBottom: 20
+  },
+
+  group_view: {
+    flexDirection: "row",
     flex: 1
   },
 
   text: {
     margin: 10,
+    marginLeft: 20,
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'white'
-  }
+    color: Colors.fontColor,
+  },
+
+  body_container:{
+    flexDirection: 'column',
+    paddingTop: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    backgroundColor: Colors.collapseColor,
+    borderRadius: 3,
+  },
+
+  body_text:{
+    fontSize: 15,
+    flex: 1,
+    color: "white",
+    textAlign: 'justify',
+    fontWeight: 'bold',
+    paddingRight: 10,
+    paddingLeft: 10,
+    paddingBottom: 10
+  },
 });
 
 export default HomeScreen;

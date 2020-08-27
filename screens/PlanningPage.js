@@ -17,6 +17,7 @@ export default function PlanningScreen() {
         data={dataDays}
         renderItem={({ item }) => <DayItem dayName={item.title} dayDetails={item.body} dayDate={item.date}/>}
         keyExtractor={item => item.id}
+        style={{paddingTop: 20, backgroundColor: 'white'}}
       />
     </SafeAreaView>
   );
@@ -25,7 +26,6 @@ export default function PlanningScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Constants.statusBarHeight,
     backgroundColor: Colors.background
   }
 });

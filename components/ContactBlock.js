@@ -21,7 +21,7 @@ const ContactBlock = ({contacts}) => {
         </View>
       </View>
       <TouchableOpacity style={styles.call_view} onPress={() => Linking.openURL(`tel:${contacts.tel}`)}>
-        <Icon name="ios-call" size={25} color="white" style={{ marginTop: 7.5}}/>
+        <Icon name="ios-call" size={30} color="white" style={{ marginTop: 15}}/>
       </TouchableOpacity>
     </View>
   )
@@ -31,46 +31,49 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 15,
-    backgroundColor: "white",
-    borderRadius: 65,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 10,
+    backgroundColor: Colors.blockColor,
     alignItems: 'center',
-    alignContent: 'space-between'
+    alignContent: 'space-between',
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    borderTopRightRadius: 30,
+    borderBottomRightRadius: 30,
   },
 
   text_container: {
     flex: 1,
     flexDirection: 'column',
+    color: "white",
     marginLeft: 10
   },
 
   nom_text: {
     fontFamily: Colors.fontFamily,
     fontWeight: 'bold',
-    fontSize: 25
+    color: "white",
+    fontSize: 20
   },
 
   poste_text: {
-    fontSize: 20
+    color: "white",
+    fontSize: 15
   },
 
   avatar: {
     width: 60,
     height: 60,
-    borderRadius: 45,
-    borderWidth: 4,
-    borderColor: "white",
+    borderRadius: 25,
   },
 
   call_view: {
-    height: 40,
-    width: 40,
-    backgroundColor: "#58D68D",
+    height: 60,
+    width: 60,
+    backgroundColor: "#08780E",
     alignItems: 'center',
-    borderRadius: 40,
-    marginRight: 15,
+    borderRadius: 25,
   },
 
   classic_view: {

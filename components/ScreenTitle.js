@@ -18,16 +18,16 @@ const ScreenTitle = ({title}) => {
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: 'white',
+    backgroundColor: Colors.mainColor,
     justifyContent: 'center',
 //    borderBottomLeftRadius : 45,
 //    borderBottomRightRadius : 45,
-    height: 40,
+    height: 50,
   },
   title: {
     fontFamily: Colors.fontFamily,
     fontSize: 30,
-    color: Colors.fontColor,
+    color: "white",
     fontWeight: 'bold',
     textAlign: 'center',
     textAlignVertical: 'center',

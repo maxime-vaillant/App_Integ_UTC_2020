@@ -23,40 +23,41 @@ const InformationBoard = ({infoName, infoDetails, infoDate}) => {
 
 const styles = StyleSheet.create({
   main_container: {
-    marginLeft: 20,
-    marginRight: 20,
-    borderColor: '#000000',
-    maxHeight: 0.6*height,
+    backgroundColor: Colors.mainColor,
+    maxHeight: 0.5*height,
 //    borderTopRightRadius: 20,
 //    borderTopLeftRadius: 20,
-    borderRadius: 5,
     paddingLeft: 5,
-    backgroundColor: 'white'
   },
 
   scroll_container: {
-    paddingLeft: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginBottom: 10,
   },
 
   view_container: {
-    paddingLeft: 10,
-    paddingTop: 5
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 5,
+    marginBottom: 10,
   },
 
   title_text: {
     fontSize: 35,
-    fontFamily: Colors.fontFamily,
-    color: Colors.fontColor,
+    color: "white",
     fontWeight: 'bold'
   },
 
   body_text: {
     fontSize: 20,
+    color: "white",
     textAlign: 'justify'
   },
 
   date_text: {
     fontSize: 15,
+    color: "white",
     fontStyle: 'italic',
     textAlign: 'right',
     marginRight: 10,

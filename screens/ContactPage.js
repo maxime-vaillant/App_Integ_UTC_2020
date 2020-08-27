@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text, FlatList } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, FlatList, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 
 import ScreenTitle from '../components/ScreenTitle';
@@ -12,11 +12,13 @@ const dataContact = static_data.Contacts;
 function ContactScreen() {
   return(
     <SafeAreaView style={styles.main_container}>
+      <StatusBar translucent='true' barStyle='light-content' hidden='false'/>
       <ScreenTitle title="Contacts"/>
       <FlatList
         data={dataContact}
         renderItem={({item}) => <ContactBlock contacts={item}/>}
         keyExtractor={item => item.id}
+        style={{paddingTop: 20, backgroundColor: 'white'}}
       />
     </SafeAreaView>
   )
@@ -24,7 +26,6 @@ function ContactScreen() {
 
 const styles  = StyleSheet.create({
   main_container: {
-    marginTop: Constants.statusBarHeight,
     flex: 1,
     backgroundColor: Colors.background
   }
