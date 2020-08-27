@@ -1,6 +1,8 @@
 export default {
-  background : "#DAC0AF",
-  iconColor : "#C45824",
-  fontColor : "#C45824",
-  fontFamily : 'SourceSansPro',
+  background : "#B73904",
+  tabBarBackground: "#B73904",
+  mainColor: "#B73904",
+  blockColor: "#C86244",
+  collapseColor: "rgba(183, 57, 4, 0.6)",
+  fontColor : "#B73904",
 }
