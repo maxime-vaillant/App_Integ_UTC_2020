@@ -10,7 +10,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@use-expo/font": "^2.0.0",
-    "accordion-collapse-react-native": "^0.2.10",
+    "accordion-collapse-react-native": "^0.2.11",
     "expo": "~37.0.3",
     "expo-asset": "^8.1.4",
     "expo-constants": "^9.0.0",

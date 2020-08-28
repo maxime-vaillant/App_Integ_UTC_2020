@@ -5,7 +5,7 @@ import { imageIndex } from "../assets/imageIndex";
 
 const LockedScore = () => {
   return(
-    <View style={{flex:6, flexDirection: 'row'}}>
+    <View style={{flex:6, flexDirection: 'row', alignSelf: 'center'}}>
       <Image style={styles.image} source={imageIndex[9]}/>
     </View>
   )

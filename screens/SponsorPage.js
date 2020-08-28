@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, Image, Dimensions, View } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, Image, Dimensions, View, TouchableHighlight, Linking } from 'react-native';
 
 import ScreenTitle from '../components/ScreenTitle';
 import PubItem from '../components/PubItem';
@@ -17,7 +17,9 @@ function SponsorScreen() {
         <PubItem index={17} lien='https://www.ornikar.com'/>
         <PubItem index={18} lien='https://www.ornikar.com'/>
         <PubItem index={19} lien='https://www.ornikar.com'/>
-        <Image style={styles.image} source={imageIndex[20]}/>
+        <TouchableHighlight onPress={() => Linking.openURL('https://antredemondes.fr')}>
+          <Image style={styles.image} source={imageIndex[20]}/>
+        </TouchableHighlight>
       </ScrollView>
     </SafeAreaView>
   )

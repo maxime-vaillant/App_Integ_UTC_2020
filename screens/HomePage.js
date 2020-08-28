@@ -54,8 +54,8 @@ function HomeScreen() {
           ?
           <View style={styles.normal_view}>
             <Text style={styles.text}>Planning du jour</Text>
-            <DayItemNow dayName={dataDays[date-21].title} dayDetails={dataDays[date-21].body}/>
-            <DayItem dayName={dataDays[date-20].title} dayDetails={dataDays[date-20].body} dayDate={dataDays[date-20].date} />
+            <DayItemNow dayName={dataDays[date-12].title} dayDetails={dataDays[date-12].body}/>
+            <DayItem dayName={dataDays[date-11].title} dayDetails={dataDays[date-11].body} dayDate={dataDays[date-11].date} />
           </View>
           :
           <View></View>
@@ -72,25 +72,30 @@ function HomeScreen() {
           :
           <View></View>
         }
-        {group == null && year == 2020 && ((month == 8 && date < 12) || (month != 8) || (month == 8 && date > 19))
-          ?
-          <View style={styles.normal_view}>
-            <Text style={styles.text}>Informations sur l'application</Text>
-            <View style={styles.body_container}>
-              <Text style={styles.body_text}>- Toutes les informations nécessaires aux journées seront présentes sur cette page.</Text>
-              <Text style={styles.body_text}>- Le lieu et la date de rendez-vous pour les groupes seront sur cette page.</Text>
-              <Text style={styles.body_text}>- Tu peux retrouver le planning de l'intégration en présentielle dans la section "Journées". Clique sur la journée dont tu veux connaitre les détails.</Text>
-              <Text style={styles.body_text}>- Viens consulter les scores pour savoir si ton clan est en tête dans la section "Score" !</Text>
-              <Text style={styles.body_text}>- En cas d'URGENCE, tu peux contacter un membre du BDI dans la section "Contacts" en cliquant sur le téléphone vert.</Text>
-              <Text style={styles.body_text}>- Retrouve les bons plans proposés par nos partenaires dans la section "Bons Plans".</Text>
-              <Text style={styles.body_text}>L'ensemble du BDI te souhaite une bonne intégration !</Text>
-            </View>
-
+        <View style={styles.normal_view}>
+          <Text style={styles.text}>Informations sur l'application</Text>
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>Toutes les informations nécessaires aux journées seront présentes sur cette page.</Text>
           </View>
-          :
-          <View></View>
-        }
-
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>Le lieu et la date de rendez-vous pour les groupes seront sur cette page. </Text>
+          </View>
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>Tu peux retrouver le planning de l'intégration en présentielle dans la section "Journées". Clique sur la journée dont tu veux connaitre les détails.</Text>
+          </View>
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>Viens consulter les scores pour savoir si ton clan est en tête dans la section "Score" !</Text>
+          </View>
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>En cas d'URGENCE, tu peux contacter un membre du BDI dans la section "Contacts" en cliquant sur le téléphone vert.</Text>
+          </View>
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>Retrouve les bons plans proposés par nos partenaires dans la section "Bons Plans". Clique dessus pour être redirigé sur leur site.</Text>
+          </View>
+          <View style={styles.body_container}>
+            <Text style={styles.body_text}>L'ensemble du BDI te souhaite une bonne intégration !</Text>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   )
@@ -119,7 +124,7 @@ const styles  = StyleSheet.create({
   normal_view: {
     backgroundColor: "white",
     flex: 1,
-    paddingBottom: 20
+    paddingBottom: 10
   },
 
   group_view: {
@@ -129,6 +134,7 @@ const styles  = StyleSheet.create({
 
   text: {
     margin: 10,
+    marginTop: 15,
     marginLeft: 20,
     fontSize: 20,
     fontWeight: 'bold',
@@ -138,6 +144,7 @@ const styles  = StyleSheet.create({
   body_container:{
     flexDirection: 'column',
     paddingTop: 10,
+    margin: 5,
     marginLeft: 20,
     marginRight: 20,
     backgroundColor: Colors.collapseColor,

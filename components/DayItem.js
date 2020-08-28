@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     paddingLeft: 5,
-    backgroundColor: Colors.blockColor,
+    backgroundColor: Colors.secondColor,
     alignItems: 'center',
     borderRadius: 3,
   },
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     textAlign: 'justify',
+    fontWeight: 'bold',
     paddingRight: 10,
     paddingLeft: 10,
     paddingBottom: 10

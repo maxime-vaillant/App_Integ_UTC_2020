@@ -7,7 +7,8 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import AppNavigator from './navigation/AppNavigator';
 
 let customFonts = {
-  'SourceSansPro': require("./assets/fonts/SourceSansPro.ttf"),
+  'CovesBold': require("./assets/fonts/CovesBold.otf"),
+  'CovesLight': require("./assets/fonts/CovesLight.otf"),
 };
 
 export default function App() {

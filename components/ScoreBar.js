@@ -12,11 +12,12 @@ const ScoreBar = ({scoreEquipe,scoreMax,index}) => {
       <View style={styles.head}>
         <Image style={styles.head_totem} source={imageIndex[index]}/>
       </View>
-      <View style={{width: '60%', flex: scoreEquipe/scoreMax, alignItems: 'center', flexDirection: 'column', overflow: 'hidden',}}>
+      <View style={{width: '60%', flex: scoreEquipe/(scoreMax), alignItems: 'center', flexDirection: 'column', overflow: 'hidden',}}>
         <Image style={styles.body_totem} source={imageIndex[index+1]}/>
       </View>
       <View style={styles.foot}>
         <Image style={styles.foot_totem} source={imageIndex[index+2]}/>
+        <Text style={styles.score_text}>{scoreEquipe}</Text>
       </View>
     </View>
 )}
@@ -33,10 +34,6 @@ const styles = StyleSheet.create({
     height: '20%',
     alignItems: 'center',
     justifyContent: 'flex-end'
-  },
-
-  body: {
-
   },
 
   foot: {
@@ -61,6 +58,11 @@ const styles = StyleSheet.create({
     height: '50%',
     resizeMode: 'contain'
   },
+
+  score_text: {
+    fontWeight: 'bold',
+    marginTop: '-27%',
+  }
 })
 
 export default ScoreBar;

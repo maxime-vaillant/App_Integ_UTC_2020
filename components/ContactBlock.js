@@ -21,7 +21,7 @@ const ContactBlock = ({contacts}) => {
         </View>
       </View>
       <TouchableOpacity style={styles.call_view} onPress={() => Linking.openURL(`tel:${contacts.tel}`)}>
-        <Icon name="ios-call" size={30} color="white" style={{ marginTop: 15}}/>
+        <Icon name="ios-call" size={25} color="white" style={{ marginTop: 12.5}}/>
       </TouchableOpacity>
     </View>
   )
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 10,
-    backgroundColor: Colors.blockColor,
+    backgroundColor: Colors.collapseColor,
     alignItems: 'center',
     alignContent: 'space-between',
     borderTopLeftRadius: 30,
@@ -69,11 +69,12 @@ const styles = StyleSheet.create({
   },
 
   call_view: {
-    height: 60,
-    width: 60,
-    backgroundColor: "#08780E",
+    height: 50,
+    width: 50,
+    backgroundColor: "#1CB724",
     alignItems: 'center',
     borderRadius: 25,
+    marginRight: 5,
   },
 
   classic_view: {

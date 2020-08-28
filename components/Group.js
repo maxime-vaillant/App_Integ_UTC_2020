@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingBottom: 25,
     paddingRight: 5,
-    backgroundColor: Colors.blockColor,
+    backgroundColor: Colors.secondColor,
     alignItems: 'center',
     justifyContent: 'space-between',
   },

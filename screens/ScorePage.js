@@ -12,11 +12,11 @@ import Colors from '../assets/Colors';
 function ScoreScreen() {
 
   const [fetched, setFetched] = useState(false);
-  const [score, setScore] = useState({Tampi: '1000', Youa: '500', Kb: '200', Vb: '750', Max: '1000', Blk: '0'});
+  const [score, setScore] = useState({Tampi: '0', Youa: '0', Kb: '0', Vb: '0', Max: '1', Blk: '1'});
 
   async function fetchData() {
     setFetched(true);
-    const response = await fetch("https://assos.utc.fr/integ/API/Points/");
+    const response = await fetch("http://assos.utc.fr/integ/API/Points/");
     response
       .json()
       .then(resp => setScore(resp))
@@ -35,12 +35,7 @@ function ScoreScreen() {
         <ScreenTitle title="Score"/>
         <ImageBackground style={styles.classic_view} source={imageIndex[11]}>
           <View style={styles.first_view}></View>
-          <View style={styles.second_view}>
-            <ScoreBar scoreEquipe={score.Kb} scoreMax={score.Max} index={21}/>
-            <ScoreBar scoreEquipe={score.Tampi} scoreMax={score.Max} index={24}/>
-            <ScoreBar scoreEquipe={score.Vb} scoreMax={score.Max} index={27}/>
-            <ScoreBar scoreEquipe={score.Youa} scoreMax={score.Max} index={30}/>
-          </View>
+          {parseInt(score.Blk) == 1 ? <LockedScore/> : <UnlockedScore tampi={parseInt(score.Tampi)} youa={parseInt(score.Youa)} kb={parseInt(score.Kb)} vb={parseInt(score.Vb)} max={parseInt(score.Max)}/>}
           <View style={styles.third_view}>
             <Button
               buttonStyle={styles.button}
@@ -91,7 +86,6 @@ const styles  = StyleSheet.create({
     paddingBottom: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
   },
 
   image: {
