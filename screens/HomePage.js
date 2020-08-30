@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView, SafeAreaView, View, Text, RefreshControl, StatusBar, FlatList } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView, View, Text, RefreshControl, StatusBar, FlatList, Image, Dimensions, TouchableOpacity, Linking } from 'react-native';
 import Constants from 'expo-constants';
 
 import ScreenTitle from '../components/ScreenTitle';
@@ -10,7 +10,11 @@ import Group from '../components/Group';
 import static_data from '../assets/static_data.json';
 import Colors from '../assets/Colors';
 
+import { imageIndex } from "../assets/imageIndex";
+
 const dataDays = static_data.Days;
+
+const width = Dimensions.get('window').width;
 
 function HomeScreen() {
 
@@ -65,35 +69,30 @@ function HomeScreen() {
           <SafeAreaView style={styles.normal_view}>
             <Text style={styles.text}>Groupes</Text>
             <View style={styles.group_view}>
-            <View style={styles.normal_view_left}>{group.map(item => item.numero % 2 == 1 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
-            <View style={styles.normal_view_right}>{group.map(item => item.numero % 2 == 0 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
+            <View style={styles.normal_view_left}>{group.map(item => item.numero % 4 == 1 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
+            <View style={styles.normal_view_left1}>{group.map(item => item.numero % 4 == 2 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
+            <View style={styles.normal_view_right1}>{group.map(item => item.numero % 4 == 3 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
+            <View style={styles.normal_view_right}>{group.map(item => item.numero % 4 == 0 ? <Group group={item.numero} date={item.heure} lieu={item.lieu} key={item.numero}/> : <View></View>)}</View>
             </View>
           </SafeAreaView>
           :
           <View></View>
         }
         <View style={styles.normal_view}>
-          <Text style={styles.text}>Informations sur l'application</Text>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>Toutes les informations nécessaires aux journées seront présentes sur cette page.</Text>
+          <View style={styles.logo_container_view}>
+            <Image style={styles.logo_view} source={imageIndex[36]}/>
           </View>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>Le lieu et la date de rendez-vous pour les groupes seront sur cette page. </Text>
-          </View>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>Tu peux retrouver le planning de l'intégration en présentielle dans la section "Journées". Clique sur la journée dont tu veux connaitre les détails.</Text>
-          </View>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>Viens consulter les scores pour savoir si ton clan est en tête dans la section "Score" !</Text>
-          </View>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>En cas d'URGENCE, tu peux contacter un membre du BDI dans la section "Contacts" en cliquant sur le téléphone vert.</Text>
-          </View>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>Retrouve les bons plans proposés par nos partenaires dans la section "Bons Plans". Clique dessus pour être redirigé sur leur site.</Text>
-          </View>
-          <View style={styles.body_container}>
-            <Text style={styles.body_text}>L'ensemble du BDI te souhaite une bonne intégration !</Text>
+          <Text style={styles.logo_text}>Integration 2020</Text>
+          <View style={styles.image_container_view}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/integutc/')}>
+              <Image style={styles.image_view} source={imageIndex[33]}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/integrationutc/')}>
+              <Image style={styles.image_view} source={imageIndex[34]}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/channel/UCQ7TDl2-jBgVoJlM0YPwNyA')}>
+              <Image style={styles.image_view} source={imageIndex[35]}/>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -109,16 +108,30 @@ const styles  = StyleSheet.create({
 
   normal_view_left: {
     flex: 1,
-    paddingRight: 5,
+    marginLeft: 5,
+    marginRight: 5,
     alignItems: "center",
-    marginLeft: 20,
   },
 
   normal_view_right: {
     flex: 1,
-    paddingLeft: 5,
+    marginLeft: 5,
+    marginRight: 5,
     alignItems: "center",
-    marginRight: 20,
+  },
+
+  normal_view_left1: {
+    flex: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    alignItems: "center",
+  },
+
+  normal_view_right1: {
+    flex: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    alignItems: "center",
   },
 
   normal_view: {
@@ -129,7 +142,9 @@ const styles  = StyleSheet.create({
 
   group_view: {
     flexDirection: "row",
-    flex: 1
+    flex: 1,
+    marginLeft: 10,
+    marginRight: 10,
   },
 
   text: {
@@ -161,6 +176,46 @@ const styles  = StyleSheet.create({
     paddingLeft: 10,
     paddingBottom: 10
   },
+
+  image_view: {
+    width: width/4 - 20,
+    height: (width/4 - 20),
+    resizeMode: 'contain',
+  },
+
+  logo_view: {
+    width: width - 20,
+    height: (width - 20),
+    resizeMode: 'contain',
+  },
+
+  image_container_view: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 10,
+  },
+
+  logo_container_view: {
+    alignItems: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 5,
+    paddingTop: 20
+  },
+
+  logo_text: {
+    margin: 10,
+    marginTop: 15,
+    marginLeft: 20,
+    fontSize: 25,
+    alignSelf: 'center',
+    fontWeight: 'bold',
+    color: Colors.fontColor,
+    paddingBottom: 20,
+  }
+
 });
 
 export default HomeScreen;

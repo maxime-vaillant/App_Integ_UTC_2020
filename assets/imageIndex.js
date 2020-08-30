@@ -27,5 +27,8 @@ export const imageIndex = {
   "30":require("./images/YouaHead.png"),
   "31":require("./images/YouaFullBody.png"),
   "32":require("./images/YouaFoot.png"),
-
+  "33":require("./images/facebook.png"),
+  "34":require("./images/insta.png"),
+  "35":require("./images/ytb.png"),
+  "36":require("./images/logo_terracotta.png"),
 }

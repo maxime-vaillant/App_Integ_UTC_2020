@@ -43,7 +43,7 @@ const tabNavigator = createBottomTabNavigator(
         tabBarIcon: ({ focused }) =>
           <TabBarIcon
             focused={focused}
-            name={ Platform.OS === "ios" ? 'ios-trophy' : 'md-trophy' }
+            name={ Platform.OS === "ios" ? 'ios-podium' : 'md-podium' }
           />
       }
     },

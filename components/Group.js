@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Text, Dimensions } from 'react-native';
+import { StyleSheet, View, ScrollView, Text, Dimensions, TouchableOpacity } from 'react-native';
 
 import Colors from '../assets/Colors';
 
@@ -17,12 +17,12 @@ const Group = ({group, date, lieu}) => {
 
 const styles = StyleSheet.create({
   main_container: {
-    width: width/2 - 25,
-    height: width/2 - 25,
-    marginBottom: 10,
+    width: width/4 - 10,
+    height: width/4 - 10,
+    marginBottom: 5,
     paddingLeft: 5,
-    paddingTop: 25,
-    paddingBottom: 25,
+    paddingTop: 10,
+    paddingBottom: 10,
     paddingRight: 5,
     backgroundColor: Colors.secondColor,
     alignItems: 'center',
@@ -32,19 +32,19 @@ const styles = StyleSheet.create({
   text_title: {
     color: "white",
     fontWeight: 'bold',
-    fontSize: 25,
+    fontSize: 14,
   },
 
   text_date: {
     color: "white",
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 15,
   },
 
   text_lieu: {
     color: "white",
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 12,
   }
 
 })
