@@ -5,5 +5,5 @@ export default {
   blockColor: "#C86244",
   collapseColor: "rgba(183, 57, 4, 0.6)",
   fontColor : "#B73904",
-  secondColor: "#ADCBE8",
+  secondColor: "#3996EC",
 }

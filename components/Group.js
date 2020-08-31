@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   text_lieu: {
     color: "white",
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 11,
   }
 
 })

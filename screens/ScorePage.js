@@ -16,7 +16,7 @@ function ScoreScreen() {
 
   async function fetchData() {
     setFetched(true);
-    const response = await fetch("http://assos.utc.fr/integ/API/Points/");
+    const response = await fetch("https://assos.utc.fr/integ/API/Points/");
     response
       .json()
       .then(resp => setScore(resp))

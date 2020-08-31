@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import { Collapse, CollapseHeader, CollapseBody } from 'accordion-collapse-react-native';
 
 import Colors from '../assets/Colors';
 
+
+
 const DayItem = ({dayName, dayDetails, dayDate}) => {
+    const [year, setYear] = useState(new Date().getFullYear());
+    const [month, setMonth] = useState(new Date().getMonth());
+    const [date, setDate] = useState(new Date().getDate());
+
     return(
     <Collapse>
       <CollapseHeader>
@@ -13,7 +19,7 @@ const DayItem = ({dayName, dayDetails, dayDate}) => {
       </View>
       </CollapseHeader>
       <CollapseBody>
-        <ScrollView style={styles.body_container}>
+        <ScrollView style={styles.body_container, {backgroundColor: Colors.secondColor,}}>
           <Text style={styles.date_text}>{dayDate}</Text>
           <Text style={styles.body_text}>{dayDetails}</Text>
         </ScrollView>
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     backgroundColor: Colors.secondColor,
     alignItems: 'center',
-    borderRadius: 3,
+    borderRadius: 3
   },
 
   body_container:{
@@ -39,10 +45,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     marginLeft: 20,
     marginRight: 20,
-    borderColor: '#000000',
     backgroundColor: Colors.collapseColor,
     borderRadius: 3,
-    marginTop: 0,
+    marginTop: 0
   },
 
   content_container: {
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     flex: 1,
     paddingRight: 5,
-    marginLeft: 5,
+    marginLeft: 5
   },
 
   body_text:{
@@ -78,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 5,
     paddingRight: 10,
-    marginBottom: 10,
+    marginBottom: 10
   }
 
 })

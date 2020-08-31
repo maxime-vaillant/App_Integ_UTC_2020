@@ -22,13 +22,16 @@ function HomeScreen() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth());
   const [date, setDate] = useState(new Date().getDate());
-  const [info, setInfo] = useState({title: 'LE SITE', details: 'EST', idate: 'DOWN'});
+  const [info, setInfo] = useState({title: '', details: '', idate: ''});
   const [group, setGroup] = useState(null);
+  const [defi, setDefi] = useState(null);
+
 
   async function fetchData() {
     setFetched(true);
     const info = await fetch("https://assos.utc.fr/integ/API/Informations/");
     const group = await fetch("https://assos.utc.fr/integ/API/Groupe/");
+    const defi = await fetch("https://assos.utc.fr/integ/API/Defi/");
     info
       .json()
       .then(info => setInfo(info))
@@ -36,6 +39,10 @@ function HomeScreen() {
     group
       .json()
       .then(group => setGroup(group))
+      .catch(error => error);
+    defi
+      .json()
+      .then(defi => setDefi(defi))
       .catch(error => error);
     setFetched(false);
   }
@@ -54,6 +61,17 @@ function HomeScreen() {
         />
       }>
         <InformationBoard infoName={info.title} infoDetails={info.details} infoDate={info.idate}/>
+        {defi != null
+          ?
+          <View style={styles.normal_view}>
+          <Text style={styles.text}>Les defis</Text>
+            <TouchableOpacity style={styles.defi_container} onPress={() => Linking.openURL(defi)}>
+              <Text style={styles.title_text}>DEFIS</Text>
+            </TouchableOpacity>
+          </View>
+          :
+          <View></View>
+        }
         {year == 2020 && month == 8 && date >= 12 && date <= 19
           ?
           <View style={styles.normal_view}>
@@ -79,9 +97,9 @@ function HomeScreen() {
           <View></View>
         }
         <View style={styles.normal_view}>
-          <View style={styles.logo_container_view}>
+          <TouchableOpacity style={styles.logo_container_view} onPress={() => Linking.openURL('https://assos.utc.fr/integ/')}>
             <Image style={styles.logo_view} source={imageIndex[36]}/>
-          </View>
+          </TouchableOpacity>
           <Text style={styles.logo_text}>Integration 2020</Text>
           <View style={styles.image_container_view}>
             <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/integutc/')}>
@@ -89,6 +107,9 @@ function HomeScreen() {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/integrationutc/')}>
               <Image style={styles.image_view} source={imageIndex[34]}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('https://discord.gg/ZEW97tP')}>
+              <Image style={styles.image_view} source={imageIndex[37]}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/channel/UCQ7TDl2-jBgVoJlM0YPwNyA')}>
               <Image style={styles.image_view} source={imageIndex[35]}/>
@@ -214,8 +235,29 @@ const styles  = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.fontColor,
     paddingBottom: 20,
-  }
+  },
 
+  defi_container: {
+    height: 50,
+    flexDirection: 'row',
+    marginTop : 5,
+    marginLeft: 20,
+    marginRight: 20,
+    paddingLeft: 5,
+    backgroundColor: Colors.secondColor,
+    alignItems: 'center',
+    borderRadius: 3
+  },
+
+  title_text: {
+    fontFamily: Colors.fontFamily,
+    fontWeight: 'bold',
+    color: "white",
+    fontSize: 20,
+    flex: 1,
+    paddingRight: 5,
+    marginLeft: 5
+  }
 });
 
 export default HomeScreen;

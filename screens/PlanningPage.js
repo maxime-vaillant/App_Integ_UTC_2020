@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, ScrollView } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import {AccordionList} from "accordion-collapse-react-native";
 import Constants from 'expo-constants';
 
