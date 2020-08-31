@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - node
+  - lts/*
+cache:
+  directories:
+    - ~/.npm
+before_script:
+  - npm install -g npm@latest
+jobs:
+  include:
+    - stage: Build Android
+      node_js: lts/*
+      script:
+        - npx expo build:android
+jobs:
+  include:
+    - stage: Build iOS
+      node_js: lts/*
+      script:
+        - npx expo build:ios
