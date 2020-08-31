@@ -64,7 +64,7 @@ function HomeScreen() {
         {defi != null
           ?
           <View style={styles.normal_view}>
-          <Text style={styles.text}>Les defis</Text>
+          <Text style={styles.text}>Liste des défis</Text>
             <TouchableOpacity style={styles.defi_container} onPress={() => Linking.openURL(defi)}>
               <Text style={styles.title_text}>DEFIS</Text>
             </TouchableOpacity>
