@@ -12,7 +12,6 @@ const dataContact = static_data.Contacts;
 function ContactScreen() {
   return(
     <SafeAreaView style={styles.main_container}>
-      <StatusBar translucent='true' barStyle='light-content' hidden='false'/>
       <ScreenTitle title="Contacts"/>
       <FlatList
         data={dataContact}

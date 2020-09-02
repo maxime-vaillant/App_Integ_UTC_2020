@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
 //    borderTopRightRadius: 20,
 //    borderTopLeftRadius: 20,
     paddingLeft: 5,
+    marginTop: 20,
   },
 
   scroll_container: {

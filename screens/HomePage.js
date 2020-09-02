@@ -53,7 +53,6 @@ function HomeScreen() {
 
   return(
     <SafeAreaView style={styles.main_container}>
-      <StatusBar translucent='true' barStyle='light-content' hidden='false'/>
       <ScrollView refreshControl={
         <RefreshControl
           refreshing={fetched}

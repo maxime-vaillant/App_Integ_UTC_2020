@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   container:{
     backgroundColor: Colors.mainColor,
     justifyContent: 'center',
+    marginTop: 20,
 //    borderBottomLeftRadius : 45,
 //    borderBottomRightRadius : 45,
     height: 50,
