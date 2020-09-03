@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Intégration 2020",
+    "name": "Integ UTC",
     "slug": "Integration",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -23,13 +23,13 @@
       "src/images/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.utcintegration.integration2020",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.1"
     },
     "android": {
       "package": "com.utcintegration.integration2020",
-      "versionCode": 2
+      "versionCode": 3
     }
   }
 }
